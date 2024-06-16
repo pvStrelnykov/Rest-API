@@ -15,18 +15,23 @@ class userController {
 		}
 	}
 
-	async update(req, res, next) {
+	async update(req, res) {
 		try {
-			const { username, password } = req.body
+			const { id } = req.params
+			const updateData = req.body
 
-			const updateData = { username }
-			if (password) {
-				const hashPassword = bcrypt.hashSync(password, 7)
-				updateData.password = hashPassword
+			if (updateData.password) {
+				const hashPassword = await bcrypt.hashSync(updateData.password, 7);
+				updateData.password = hashPassword;
 			}
 
-			const updatedUser = await User.findByIdAndUpdate(updateData)
-			res.json(updatedUser)
+			const updateUser = await User.findByIdAndUpdate(id, updateData, {new: true})
+
+			if(!updateUser){
+				throw ApiError.badRequest('User not found')
+			}
+
+			res.json(updateUser)
 		} catch (e) {
 			console.error(e.message)
 		}

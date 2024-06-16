@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+		"title":"Edit"
+	})
+	<body class='auth-bg'>
+		<div class="wrapper">
+			<div class="auth">
+				<div class="auth__body">
+					<div class="auth__title">Edit data</div>
+					<form id='editForm' class='auth__form form-auth'>
+						<div class="mb-4">
+							<input data-required type="text" class="form-control" name="username" data-error="Не может быть пустым" placeholder='Username' id='username'>
+						</div>
+						<div class="mb-4">
+							<input data-required type="text" class="form-control" data-error="Не может быть пустым" name="password" placeholder='Password' id='password'>
+						</div>
+						<button type="submit" class="btn btn-primary mb-3">Submit</button>
+						<a href='/profile.html' class="btn btn-light mb-2">Cancel</a>
+						<div id="errorContainer" class='form-auth__error'></div>
+					</form>
+					<div id="loading">
+						<img src="@img/loader.gif" alt="Loading..." />
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+		</script>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

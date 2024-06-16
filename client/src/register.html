@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+		"title":"Registration"
+	})
+	<body class='auth-bg'>
+		<div class="wrapper">
+			<div class="auth">
+				<div class="auth__body">
+					<div class="auth__title">Registration</div>
+					<form data-ajax action='http://localhost:5375/api/auth/registration' method='post' class='auth__form form-auth'>
+						<div class="mb-4">
+							<input data-required type="text" class="form-control" name="username" placeholder='Username'>
+						</div>
+						<div class="mb-4">
+							<input data-required type="text" class="form-control" name="password" placeholder='Password'>
+						</div>
+						<button type="submit" class="btn btn-primary mb-4">Submit</button>
+						<div class="form-auth__text">Already have an account?  <a href="./login.html" class='text-primary'>Log in</a></div>
+						<div id="errorContainer" class="form-auth__error"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

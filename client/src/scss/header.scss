@@ -1,0 +1,43 @@
+.header {
+	margin-bottom: 20px;
+	padding: 50px 0;
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__logo {
+		font-size: 35px;
+		font-weight: 900;
+	}
+	&__user {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		display: flex;
+		justify-content:center;
+		align-items: center;
+		background-color: #fff;
+		font-size: 24px;
+		transition: all 0.2s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			}
+		}
+	}
+	&__actions{
+		display: none;
+		column-gap: 20px;
+		a{
+			font-size: 20px;
+			font-weight: 500;
+			transition: all 0.2s ease 0s;
+			@media (any-hover: hover){
+				&:hover{
+					color: #0064df;
+				}
+			}
+		}
+	}
+}

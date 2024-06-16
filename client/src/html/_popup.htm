@@ -1,0 +1,26 @@
+<div id="addProduct" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрити</button>
+			<form id='auctionForm' class="product-form__body">
+				<div class="product-form__input mb-4">
+					<input type="text" name="title" class='form-control' placeholder="Title" value='Product'>
+				</div>
+				<div class="product-form__input mb-4">
+					<input type="number" name="startingPrice" class='form-control' placeholder="Starting Price" value='20'>
+				</div>
+				<div class="product-form__input mb-4">
+					<input type="date" name="bidEndTime" class='form-control' placeholder="Bid End Time">
+				</div>
+				<div class="product-form__input mb-4">
+					<textarea name="description" placeholder='About' class='form-control'></textarea>
+				</div>
+				<!-- <button class="button-file btn btn-success mb-3">
+					Add image
+					<input type="file" name="image" data-error="Помилка">
+				</button> -->
+				<button data-close type='submit' class="btn btn-primary" >Add</button>
+			</form>
+		</div>
+	</div>
+</div>

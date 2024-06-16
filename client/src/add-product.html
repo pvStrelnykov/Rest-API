@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Edit auction"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+        <div class="product-form">
+					<div class="product-form__inner">
+						<div class="product-form__title mb-4">Create auction</div>
+						<form id='addAuctionForm' class="product-form__body">
+							<div class="product-form__input mb-4">
+								<input data-required type="text" name="title" class='form-control' placeholder="Title">
+							</div>
+							<div class="product-form__input mb-4">
+								<input data-required type="number" name="price" class='form-control' placeholder="Starting Price">
+							</div>
+							<div class="product-form__input mb-4">
+								<textarea data-required name="description" placeholder='Description' class='form-control'></textarea>
+							</div>
+							<div class="mb-3">
+								<label for="formFile" class="form-label">Select file</label>
+								<input data-required class="form-control" type="file" id="formFile" name='img'>
+							</div>
+							<button type='submit' class="btn btn-primary">Create</button>
+						</form>
+					</div>
+				</div>
+			</main>
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -1,9 +1,8 @@
 import auctionService from './auction.service.js'
-import Auction from './auction.model.js'
 import ApiError from '../error/ApiError.js'
 
 class auctionController {
-	async get(req, res, next) {
+	async getOne(req, res, next) {
 		try {
 			const auction = await auctionService.getOne(req.params.id)
 			if(!auction){
@@ -18,7 +17,8 @@ class auctionController {
 
 	async getAll(req, res, next) {
 		try {
-			const auctions = await auctionService.getAll()
+			const userId = req.user.id
+			const auctions = await auctionService.getAll(userId)
 			return res.json(auctions)
 		} catch (e) {
 			console.log(e.message)
@@ -28,7 +28,8 @@ class auctionController {
 
 	async create(req, res, next) {
 		try {
-			const auction = await auctionService.create(req.body, req.files.img)
+			const userId = req.user.id
+			const auction = await auctionService.create(req.body, req.files.img, userId)
 			return res.json(auction)
 		} catch (e) {
 			console.log(e.message)
@@ -38,14 +39,14 @@ class auctionController {
 
 	async update(req, res, next) {
 		try {
-			const auction = req.body
-			if(!auction._id){
+			const { id } = req.params
+			if(!id){
 				res.json('not found id')
 			}
-			const updatedAuction = await Auction.findByIdAndUpdate(auction._id, auction, {new: true})
-			return res.json(updatedAuction)
+			const updatedAuction = await auctionService.update(id, req.body, req.files.img)
+      return res.json(updatedAuction);
 		} catch (e) {
-			console.log(e.message)
+			console.log(e)
 		}
 	}
 

@@ -4,7 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon app.js",
+    "client": "npm run dev --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-fileupload": "^1.5.0",
@@ -30,6 +33,7 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "console-log-colors": "^0.5.0",
     "nodemon": "^3.1.3"
   }

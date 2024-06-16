@@ -1,0 +1,22 @@
+.pay {
+	margin-top: 100px;
+	&__container {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		border-radius: 30px;
+		background-color: #CFE9FF;
+		padding: 40px 50px;
+	}
+	&__title {
+		text-align: center;
+		font-size: 24px;
+		font-weight: 500;
+	}
+	&__form {
+	}
+	&__input {
+	}
+	&__row {
+	}
+}

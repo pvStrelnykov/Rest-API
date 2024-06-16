@@ -9,7 +9,7 @@ const router = new Router()
 
 router.post('/registration', [
 	check('username', 'The field can\'t be empty').notEmpty(),
-	check('password', 'Minimum number of symbols 5').isLength({ min: 5 })
+	check('password', 'The field can\'t be empty').notEmpty()
 ], authController.registration)
 router.post('/login', authController.login)
 router.post('/logout', authMiddlewares, blacklistMiddlewares, authController.logout)

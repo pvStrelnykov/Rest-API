@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Home"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="pay">
+					<div class="pay__container">
+						<div class="pay__title mb-4">Payment Info</div>
+						<form action='#' class="pay__form">
+							<div class="pay__input mb-3">
+								<input autocomplete="off" type="text" name="username" class='form-control' placeholder="Full name">
+							</div>
+							<div class="pay__input mb-3">
+								<input autocomplete="off" type="number" name="number-card" class='form-control' placeholder="0000   0000   0000   0000">
+							</div>
+							<div class="pay__row row">
+								<div class="col">
+									<input autocomplete="off" type="number" name="date" class='form-control' placeholder="MM/YY">
+								</div>
+								<div class="col">
+									<input autocomplete="off" type="password" name="cod" class='form-control' placeholder="CVV">
+								</div>
+							</div>
+							<button class="btn btn-primary w-100 mt-4">Pay</button>
+						</form>
+					</div>
+				</div>
+			</main>
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

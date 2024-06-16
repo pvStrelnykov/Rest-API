@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Home"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+        <section class="auctions">
+					<div class="container">
+						<div class="auctions__title title-section">
+							<span>Active auctions</span>
+							<a href="add-product.html" class="button-action" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Create auction"><svg width='20' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></a>
+						</div>
+						<div class="auctions__body">
+							<article class="auctions__item item-auctions">
+								<a href="product.html" class="item-auctions__img">
+									<img src="https://dedra.pl/rus_pl_%D0%91%D0%B5%D1%81%D1%89%D0%B5%D1%82%D0%BE%D1%87%D0%BD%D0%B0%D1%8F-%D0%B4%D1%80%D0%B5%D0%BB%D1%8C-%D1%88%D1%83%D1%80%D1%83%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%82-18-%D0%92-DEDRA-SAS-ALL-DED7141-13-%D0%BC%D0%BC-%D0%B1%D0%B5%D0%B7-%D1%83%D0%B4%D0%B0%D1%80%D0%B0-50-%D0%9D%D0%BC-27025_1.webp" alt="">
+								</a>
+								<div class="item-auctions__desc">
+									<a href="" class="item-auctions__title">Title</a>
+									<p class="item-auctions__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum adipisci quidem doloribus suscipit. Asperiores, quod beatae! Ipsum culpa deserunt cum hic, rerum fuga</p>
+									<div class="item-auctions__category">
+										<span>Category:</span>Study, work
+									</div>
+									<button class="item-auctions__pay btn btn-primary">Pay</button>
+								</div>
+								<div class="item-auctions__actions">
+									<a href="edit-product.html" class="item-auctions__button"><svg width='20' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill='#fff' d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg></a>
+									<a href="#" class="item-auctions__button"><svg width='20' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill='#fff' d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></a>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

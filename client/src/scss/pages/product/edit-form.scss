@@ -1,0 +1,30 @@
+.product-form {
+	margin-top: 50px;
+	&__inner {
+		width: 100%;
+		max-width: 650px;
+		margin: 0 auto;
+	}
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		text-align: center;
+	}
+	&__body {
+		background-color: #fff;
+		padding: 40px;
+		border-radius: 30px;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	}
+	&__input {
+		textarea{
+			min-height: 150px;
+			resize: vertical;
+		}
+	}
+	.button-file{
+		position: relative;
+	}
+}

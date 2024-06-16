@@ -5,7 +5,7 @@ const Auction = new Schema({
 	description: { type: String, required: true },
 	price: { type: Number, required: true },
 	img: { type: String, required: true },
-	user: { type: Schema.Types.ObjectId, ref: 'User' }
+	user: { type: Schema.Types.ObjectId, ref: 'User', required: true}
 }, {
 	timestamps: true
 })

@@ -11,8 +11,8 @@ class auctionService{
 		return auction
 	}
 
-	async getAll() {
-		const auctions = await Auction.find()
+	async getAll(userId) {
+		const auctions = await Auction.find({ user: userId })
 		return auctions
 	}
 
@@ -22,8 +22,10 @@ class auctionService{
 		return createdAuction
 	}
 
-	async update(id) {
-		
+	async update(id, data, img) {
+    const fileName = fileService.saveFile(img)
+    const updatedAuction = await Auction.findByIdAndUpdate(id, { ...data, img: fileName }, { new: true })
+    return updatedAuction
 	}
 
 	async delete(id) {
