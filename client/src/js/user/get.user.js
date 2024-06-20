@@ -1,4 +1,4 @@
-import { user, userId, token } from '../files/global.js'
+import { userId, token } from '../files/global.js'
 
 // get user
 async function getUser(){

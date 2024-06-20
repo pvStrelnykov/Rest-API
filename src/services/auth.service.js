@@ -1,8 +1,8 @@
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import UserModel from '../user/user.model.js'
 import ApiError from '../error/ApiError.js'
-import Blacklist from './auth.model.js'
+import Blacklist from '../models/auth.model.js'
+import UserModel from '../models/user.model.js'
 
 const generateAccessToken = id => {
 	const payload = { id }
@@ -12,7 +12,7 @@ const generateAccessToken = id => {
 class authService {
 	async registration(username, password) {
 		const candidate = await UserModel.findOne({ username })
-		if(candidate){
+		if (candidate) {
 			throw ApiError.badRequest('User exists')
 		}
 		const hashPassword = bcrypt.hashSync(password, 7)
@@ -24,11 +24,11 @@ class authService {
 
 	async login(username, password) {
 		const user = await UserModel.findOne({ username })
-		if(!user){
+		if (!user) {
 			throw ApiError.badRequest('User not found')
 		}
 		const isPassEquals = await bcrypt.compare(password, user.password)
-		if(!isPassEquals){
+		if (!isPassEquals) {
 			throw ApiError.badRequest('Invalid password')
 		}
 		const token = generateAccessToken(user._id)

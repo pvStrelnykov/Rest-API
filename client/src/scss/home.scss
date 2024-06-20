@@ -25,6 +25,19 @@
 			}
 		}
 	}
+	&-test{
+		&::after{
+			content:'';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(255, 255, 255, 0.1);
+			border-radius: 20px;
+			backdrop-filter: blur(2px);
+		}
+	}
 	&__img {
 		display: block;
 		width: 100%;
@@ -56,15 +69,15 @@
 		font-size: 16px;
 		line-height: math.div(22 , 16);
 	}
-	&__category{
+	&__price{
 		margin-top: auto;
+		margin-bottom: 20px;
+		font-size: 30px;
+		font-weight: 700;
 		display: flex;
 		align-items: center;
-		column-gap: 10px;
-		font-size: 16px;
-		margin-bottom: 20px;
 		span{
-			color: #A7A7A7;
+			margin-right: 5px;
 		}
 	}
 	&__pay {

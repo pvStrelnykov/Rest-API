@@ -12,6 +12,7 @@ import './auction/create.auction.js'
 import './auction/edit.auction.js'
 import './auction/get.auction.js'
 import './auction/getAll.auction.js'
+import './auction/pay.auction.js'
 
 // bootstrap
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -23,10 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const profileLink = document.querySelector('.header__user')
 	const authLink = document.querySelector('.header__actions')
-	if(profileLink && authLink){
+	const addProduct = document.querySelector('.add-product')
+	if(profileLink && authLink || addProduct){
 		if (!isAuthenticated) {
 			profileLink.style.display = 'none'
 			authLink.style.display = 'flex'
+			addProduct.style.display = 'none'
 		}
 	}
 });

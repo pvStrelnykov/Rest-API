@@ -1,6 +1,8 @@
 import { token } from '../files/global.js'
 
-async function editAuction(id, formData){
+async function editAuction(id, formData) {
+	const loading = document.querySelector('#loading')
+	loading.style.display = 'flex'
 	try {
 		const res = await fetch(`http://localhost:5375/api/auctions/edit/${id}`, {
 			method: 'put',
@@ -11,7 +13,10 @@ async function editAuction(id, formData){
 		})
 
 		if (res.ok) {
-			window.location.href = '/'
+			setTimeout(() => {
+				loading.style.display = 'none'
+				window.location.href = '/'
+			}, 1500)
 		} else {
 			const error = await res.json()
 			alert(`Error: ${error.error}`)
@@ -22,7 +27,9 @@ async function editAuction(id, formData){
 }
 
 if (document.getElementById('edit-auction')) {
-	document.getElementById('edit-auction').addEventListener('submit', async event => {
+	document
+		.getElementById('edit-auction')
+		.addEventListener('submit', async event => {
 			event.preventDefault()
 
 			const form = event.target
@@ -32,6 +39,5 @@ if (document.getElementById('edit-auction')) {
 			const id = urlParams.get('id')
 
 			await editAuction(id, formData)
-
 		})
 }

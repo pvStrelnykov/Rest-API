@@ -1,4 +1,4 @@
-import auctionService from './auction.service.js'
+import auctionService from '../services/auction.service.js'
 import ApiError from '../error/ApiError.js'
 
 class auctionController {

@@ -10,23 +10,25 @@
 				<div class="pay">
 					<div class="pay__container">
 						<div class="pay__title mb-4">Payment Info</div>
-						<form action='#' class="pay__form">
-							<div class="pay__input mb-3">
-								<input autocomplete="off" type="text" name="username" class='form-control' placeholder="Full name">
+						<form id='payForm'>
+							<div class="mb-3">
+								<label for="currency" class="form-label">Currency</label>
+								<input class="form-control" id="currency" value='usd' name='currency' readonly>
 							</div>
-							<div class="pay__input mb-3">
-								<input autocomplete="off" type="number" name="number-card" class='form-control' placeholder="0000   0000   0000   0000">
+							<div class="mb-3">
+								<label for="paymentMethod" class="form-label">Payment Method</label>
+								<input type="text" class="form-control" id="paymentMethod" name='paymentMethodId' value='pm_card_visa' readonly>
 							</div>
-							<div class="pay__row row">
-								<div class="col">
-									<input autocomplete="off" type="number" name="date" class='form-control' placeholder="MM/YY">
-								</div>
-								<div class="col">
-									<input autocomplete="off" type="password" name="cod" class='form-control' placeholder="CVV">
-								</div>
+							<div class="mb-3">
+								<label for="paymentMethod" class="form-label">Description</label>
+								<textarea name="description" placeholder='Test payment' name='description' class="form-control"></textarea>
 							</div>
-							<button class="btn btn-primary w-100 mt-4">Pay</button>
+							<button type="submit" class="btn btn-primary w-100 mb-3">Submit</button>
+							<a href='/' class="btn btn-secondary w-100">Cancel</a>
 						</form>
+						<div id="loading">
+							<img src="@img/loader.gif" alt="Loading..." />
+						</div>
 					</div>
 				</div>
 			</main>

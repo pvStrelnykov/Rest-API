@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 import ApiError from '../error/ApiError.js'
-import User from './user.model.js'
+import User from '../models/user.model.js'
 
 class userController {
 	async get(req, res, next) {
@@ -11,6 +11,7 @@ class userController {
 			}
 			res.json(user)
 		} catch (e) {
+			console.error('Error when getting a user:', e)
 			return next(ApiError.badRequest('Error when getting a user'))
 		}
 	}
@@ -21,13 +22,15 @@ class userController {
 			const updateData = req.body
 
 			if (updateData.password) {
-				const hashPassword = await bcrypt.hashSync(updateData.password, 7);
-				updateData.password = hashPassword;
+				const hashPassword = await bcrypt.hashSync(updateData.password, 7)
+				updateData.password = hashPassword
 			}
 
-			const updateUser = await User.findByIdAndUpdate(id, updateData, {new: true})
+			const updateUser = await User.findByIdAndUpdate(id, updateData, {
+				new: true,
+			})
 
-			if(!updateUser){
+			if (!updateUser) {
 				throw ApiError.badRequest('User not found')
 			}
 

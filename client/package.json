@@ -72,6 +72,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"bcrypt": "^5.1.1",
 		"gulp-cheerio": "^1.0.0",
 		"isotope-layout": "^3.0.6",
 		"simplebar": "latest"

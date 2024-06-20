@@ -1,5 +1,5 @@
 import ApiError from '../error/ApiError.js'
-import Auction from './auction.model.js'
+import Auction from '../models/auction.model.js'
 import fileService from './file.service.js'
 
 class auctionService{

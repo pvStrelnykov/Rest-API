@@ -12,20 +12,23 @@
 						<div class="product-form__title mb-4">Edit auction</div>
 						<form id='edit-auction' class="product-form__body">
 							<div class="product-form__input mb-4">
-								<input type="text" name="title" class='form-control' placeholder="Title" value='Product'>
+								<input data-required type="text" name="title" class='form-control' placeholder="Title">
 							</div>
 							<div class="product-form__input mb-4">
-								<input type="number" name="price" class='form-control' placeholder="Starting Price" value='20'>
+								<input data-required type="number" name="price" class='form-control' placeholder="Price">
 							</div>
 							<div class="product-form__input mb-4">
-								<textarea name="description" placeholder='About' class='form-control'></textarea>
+								<textarea name="Description" placeholder='About product' class='form-control'></textarea>
 							</div>
 							<div class="mb-3">
 								<label for="formFile" class="form-label">Change file</label>
-								<input class="form-control" type="file" id="formFile" name='img'>
+								<input data-required class="form-control" type="file" id="formFile" name='img'>
 							</div>
 							<button class="btn btn-primary">Save</button>
 						</form>
+						<div id="loading">
+							<img src="@img/loader.gif" alt="Loading..." />
+						</div>
 					</div>
 				</div>
 			</main>

@@ -38,9 +38,12 @@ function displayAuctionData(data) {
 					<div class="product__content">
 							<div class="product__title">${data.title}</div>
 							<p class="product__desc">${data.description}</p>
-							<a href="edit-product.html?id=${data._id}" class="product__pay btn btn-secondary">Edit</a>
-							<button class="product__pay btn btn-danger delete-auction" data-id='${data._id}'>Delete</button>
-							<a href='pay.html' class="product__pay btn btn-primary">Pay</a>
+							<p class="product__price">${data.price}$</p>
+							<div class="product__action">
+								<a href="edit-product.html?id=${data._id}" class="product__pay btn btn-secondary">Edit</a>
+								<button class="product__pay btn btn-danger delete-auction" data-id='${data._id}'>Delete</button>
+							</div>
+							<a href='pay.html?id=${data._id}' class="product__pay btn btn-primary">Pay</a>
 					</div>
 			</div>
 	`

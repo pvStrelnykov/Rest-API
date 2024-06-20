@@ -4,6 +4,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import fileUpload from 'express-fileupload'
 import cors from 'cors'
+import setupSwagger from './swagger.js'
 env.config()
 
 import router from './src/routes/index.routes.js'
@@ -15,8 +16,14 @@ const app = express()
 app.use(express.json())
 app.use(express.static('client/src/img'))
 app.use(fileUpload({}))
-app.use(cors())
+app.use(cors({
+	origin: '*',
+	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+	allowedHeaders: ['Content-Type', 'Authorization']
+}))
 app.use('/api', router)
+
+setupSwagger(app)
 
 app.use(errorMiddlewares)
 
