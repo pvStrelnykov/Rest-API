@@ -43,11 +43,16 @@ Gulp + Webpack - Narzędzia do budowy i zarządzania projektem
 
 
 Uruchomienie Projektu
-1. Zainstaluj zależności:
+1. W korzeniu projektu zainstaluj zależności:
 npm install
-2. Uruchom projekt:
-npm run start
-3. Strona powinna otworzyć się automatycznie w przeglądarce.
+2. Przejdź do katalogu Client:
+cd client/
+3. Zainstaluj zależności:
+npm install
+4. Wróć do katalogu głównego:
+cd ..
+5. Uruchom projekt:
+npm start
 
 
 Dokumentacja API:
